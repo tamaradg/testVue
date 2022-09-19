@@ -1,40 +1,40 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
+    <h1>{{nom}}</h1>
+    <h2>{{prenom}}</h2>
+    <p v-if="afficheVille">{{ville}}</p>
+    <p v-show="afficheDate">{{date}}</p>
     <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
+      <!-- on boucle dans l'array en déclarant une key -->
+      <li v-for="day in tableau" :key = "day">{{day}}</li>
     </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <!-- ici on affiche ou pas la date plus haut -->
+    <button @click="afficheDate=!afficheDate">Afficher/masquer date</button>
+    <button @click="count++">Vous avez clické {{count}} fois</button>
   </div>
 </template>
 
 <script>
+// import { METHODS } from 'http';
+
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+  // on stock les données à afficher ici
+  data() {
+    return {
+      nom : "de Gaetano",
+      prenom : "Tamara",
+      ville : "Paris",
+      date : new Date().toLocaleDateString(),
+      afficheDate: true,
+      afficheVille: true,
+      tableau: ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'],
+      count: 0
+    }
+  },
+  // on place les methodes apres la data
+  methods : {
+
   }
 }
 </script>

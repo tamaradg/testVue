@@ -1,16 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+   <!-- on utilise les nouveau composants ici -->
+  <HeaderCompo/>
+  <HelloWorld/>
+  <NewComposant/>
+  <FooterCompo/>
 </template>
 
 <script>
+  // on importe les nouveaux composants ici
 import HelloWorld from './components/HelloWorld.vue'
+import NewComposant from './components/new-composant.vue'
+import HeaderCompo from "./components/HeaderCompo.vue";
+import FooterCompo from "./components/FooterCompo.vue";
 
 export default {
   name: 'App',
+  // pour utiliser un component on le déclare ici
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+    NewComposant,
+    HeaderCompo,
+    FooterCompo
+}
 }
 </script>
 
