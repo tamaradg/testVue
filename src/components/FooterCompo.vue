@@ -1,6 +1,7 @@
 <template>
   <footer>
-    <p>Copyright {{date}}</p>
+    <!-- le &copy correspond au petit logo du copyright -->
+    <p>Copyright &copy; {{date}}</p>
     <a href="mention.html">Mentions légales</a>
   </footer>
 </template>

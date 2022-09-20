@@ -4,6 +4,9 @@
   <HeaderCompo/>
   <HelloWorld/>
   <NewComposant/>
+  <TabsCompo/>
+  <MonthsCompo/>
+  <NewForm/>
   <FooterCompo/>
 </template>
 
@@ -11,8 +14,11 @@
   // on importe les nouveaux composants ici
 import HelloWorld from './components/HelloWorld.vue'
 import NewComposant from './components/new-composant.vue'
-import HeaderCompo from "./components/HeaderCompo.vue";
-import FooterCompo from "./components/FooterCompo.vue";
+import HeaderCompo from "./components/HeaderCompo.vue"
+import FooterCompo from "./components/FooterCompo.vue"
+import TabsCompo from "./components/TabsCompo.vue"
+import MonthsCompo from './components/MonthsCompo.vue';
+import NewForm from './components/NewForm.vue'
 
 export default {
   name: 'App',
@@ -21,7 +27,10 @@ export default {
     HelloWorld,
     NewComposant,
     HeaderCompo,
-    FooterCompo
+    FooterCompo,
+    TabsCompo,
+    MonthsCompo,
+    NewForm
 }
 }
 </script>
